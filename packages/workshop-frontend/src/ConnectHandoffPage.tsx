@@ -20,7 +20,7 @@ const ConnectHandoffPage = () => {
   }, [relay])
   return relay ? (
     <div className="flex min-h-full items-center justify-center bg-kumo-base p-6 text-center text-kumo-default">
-      <p role="status">{relay.record ? 'Opening sign-in…' : 'Returning to Cloudflare OS…'}</p>
+      <p role="status">{relay.record ? 'Opening sign-in…' : 'Returning to BlackHawk…'}</p>
     </div>
   ) : <BrowserConnectHandoffPage />
 }
