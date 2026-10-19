@@ -13,7 +13,7 @@ const state = vi.hoisted(() => ({
   toast: vi.fn<(toast: unknown) => void>(),
 }))
 vi.mock('./AuthContext', () => ({ useAuthenticatedApi: () => ({ authenticatedApi: state.api }) }))
-vi.mock('./ServerConfigContext', () => ({ useSiteName: () => 'Cloudflare OS' }))
+vi.mock('./ServerConfigContext', () => ({ useSiteName: () => 'BlackHawk' }))
 vi.mock('@cloudflare/kumo', async importOriginal => ({
   ...await importOriginal<typeof import('@cloudflare/kumo')>(),
   useKumoToastManager: () => ({ add: state.toast }),
