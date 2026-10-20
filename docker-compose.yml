@@ -1,0 +1,22 @@
+# Run BlackHawk OS locally in a container: `docker compose up --build -d`, then open
+# http://localhost:8787 and sign up as "admin" to reach /admin. See docs/container.md.
+name: blackhawk-os
+services:
+  blackhawk-os:
+    build: .
+    image: blackhawk-os:local
+    ports:
+      - "8787:8787"
+    volumes:
+      - blackhawk-os-data:/app/.wrangler/state
+    # Optional settings (AI Gateway, connector OAuth apps), one KEY=value per line. Gitignored.
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      # The origin users reach the app at. Account connect flows hand their result back to this
+      # origin, so change it if you browse to the container by another name or IP.
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://localhost:8787}
+    restart: unless-stopped
+volumes:
+  blackhawk-os-data:

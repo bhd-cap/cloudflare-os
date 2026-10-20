@@ -7,6 +7,8 @@
 //   --use-workers-ai-binding   Include the Workers AI binding in workshop-backend and in the
 //                               gatekeepers that declare one (requires Cloudflare login).
 //   --port PORT                 Listen on PORT instead of 8787. Overrides VITE_BACKEND_HOST.
+//   --ip ADDRESS                Listen on ADDRESS instead of localhost, e.g. 0.0.0.0 inside a
+//                               container so a published port can reach the server.
 //
 // Env:
 //   VITE_BACKEND_HOST=localhost:9000  Also pass --port 9000 to wrangler dev.
@@ -649,6 +651,15 @@ const configs = [
 ];
 
 const args = configs.flatMap(c => ["-c", c]);
+const ipFlag = process.argv.indexOf("--ip");
+if (ipFlag !== -1) {
+  const ip = process.argv[ipFlag + 1];
+  if (!ip || ip.startsWith("--")) {
+    console.error("--ip needs an address, e.g. --ip 0.0.0.0");
+    process.exit(1);
+  }
+  args.push("--ip", ip);
+}
 if (wranglerPort) {
   args.push("--port", wranglerPort);
 } else {

@@ -6,7 +6,7 @@ BlackHawk OS is BlackHawk Data's distribution of [Cloudflare OS](https://github.
 * **Unified, governed connections.** Gatekeepers broker every call to GitHub, Google, Slack, or the client's internal systems behind a Cloudflare MCP server portal. Each grant is scoped to the one resource it names, every action is logged, and every write waits for human approval.
 * **Their environment, their data.** Everything runs on Workers and Durable Objects in the client's account. Models go through their own AI Gateway.
 
-**Deploying a demo or client instance:** see [docs/deploy.md](docs/deploy.md) (`pnpm deploy:instance`).
+**Deploying a demo or client instance:** see [docs/deploy.md](docs/deploy.md) (`pnpm deploy:instance`) to deploy into a Cloudflare account, or [docs/container.md](docs/container.md) (`docker compose up --build`) to run everything in one local container.
 
 The rest of this README is the upstream Cloudflare OS documentation.
 
