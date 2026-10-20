@@ -47,9 +47,9 @@ body,
   --color-kumo-fill-hover: #dededb;
   --color-kumo-interact: #cac8c3;
 
-  /* Brand — orange accent */
-  --color-kumo-brand: #ff4801;
-  --color-kumo-brand-hover: #e03f00;
+  /* Brand — BlackHawk blue accent */
+  --color-kumo-brand: #0047ab;
+  --color-kumo-brand-hover: #00317a;
 
   /* Border / line tokens — neutral */
   --color-kumo-line: #1411100f;
@@ -80,15 +80,15 @@ body,
   --text-color-kumo-strong: #100f0d;
   --text-color-kumo-subtle: oklch(52% 0.006 60);
   --text-color-kumo-inactive: oklch(66% 0.005 60);
-  --text-color-kumo-brand: #ff4801;
-  --text-color-kumo-link: #ff4801;
+  --text-color-kumo-brand: #0047ab;
+  --text-color-kumo-link: #0047ab;
   --text-color-kumo-success: oklch(72.3% 0.219 149.579);
   --text-color-kumo-danger: oklch(63.7% 0.237 25.331);
   --text-color-kumo-warning: oklch(47.6% 0.114 61.907);
 
   /* ===== CUSTOM BRAND TOKENS ===== */
-  --color-accent-100: #ff4801;
-  --color-accent-200: #ff7038;
+  --color-accent-100: #0047ab;
+  --color-accent-200: #257cef;
   --color-background-100: #fcfcfb;
   --color-background-200: #f8f8f7;
   --color-background-300: #f3f3f1;
@@ -97,10 +97,10 @@ body,
   --color-foreground-300: #1c1a18;
   --color-border-100: #e8e7e4;
   --color-border-100-50: #1411100f;
-  --color-selection-bg: #ffe9e0;
-  --color-selection-text: #ff500a;
-  --color-shadow-accent-light: #ffa683;
-  --color-shadow-accent-dark: #b13200;
+  --color-selection-bg: #d9ecff;
+  --color-selection-text: #00317a;
+  --color-shadow-accent-light: #a8d4fc;
+  --color-shadow-accent-dark: #001233;
 
   /* Category colors */
   --color-compute-100: #0a95ff;
@@ -163,8 +163,8 @@ body,
   --color-kumo-ring: oklch(0.52 0.065 285);
   --color-kumo-bubble-user: oklch(0.225 0.025 285);
 
-  --color-kumo-brand: #b84e00;
-  --color-kumo-brand-hover: #a54200;
+  --color-kumo-brand: #1d5fc8;
+  --color-kumo-brand-hover: #164fab;
 
   --color-kumo-info: oklch(62.3% 0.214 259.815);
   --color-kumo-info-tint: oklch(0.25 0.065 259.815);
@@ -185,14 +185,14 @@ body,
   --text-color-kumo-strong: oklch(0.92 0.01 285);
   --text-color-kumo-subtle: oklch(0.66 0.02 285);
   --text-color-kumo-inactive: oklch(0.58 0.025 285);
-  --text-color-kumo-brand: #ff8a5c;
-  --text-color-kumo-link: #ff8a5c;
+  --text-color-kumo-brand: #5aaef8;
+  --text-color-kumo-link: #5aaef8;
   --text-color-kumo-success: oklch(79.2% 0.209 151.711);
   --text-color-kumo-danger: oklch(70.4% 0.191 22.216);
   --text-color-kumo-warning: oklch(82.8% 0.189 84.429);
 
-  --color-accent-100: #b84e00;
-  --color-accent-200: #ff8a5c;
+  --color-accent-100: #1d5fc8;
+  --color-accent-200: #5aaef8;
   --color-background-100: oklch(0.115 0.012 285);
   --color-background-200: oklch(0.155 0.011 285);
   --color-background-300: oklch(0.225 0.025 285);
@@ -203,7 +203,7 @@ body,
   --color-border-100-50: oklch(0.34 0.022 285 / 0.5);
   --color-selection-bg: color-mix(in srgb, var(--color-kumo-brand) 28%, transparent);
   --color-selection-text: oklch(0.97 0.006 285);
-  --color-shadow-accent-light: #ff663355;
+  --color-shadow-accent-light: #257cef55;
   --color-shadow-accent-dark: #00000080;
 
   --color-compute-100: oklch(74% 0.16 250);

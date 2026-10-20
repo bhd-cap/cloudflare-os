@@ -1,3 +1,17 @@
+# BlackHawk OS: build and automate inside your own Cloudflare environment
+
+BlackHawk OS is BlackHawk Data's distribution of [Cloudflare OS](https://github.com/cloudflare/cloudflare-os). It deploys into a client's **own Cloudflare account**. There, their teams build apps and automate work with AI agents, and every agent and app reaches the client's systems through **one secured, audited connection layer**:
+
+* **One front door.** Cloudflare Access signs users in. Each agent, and each app it builds, runs in a sandbox with no network access by default.
+* **Unified, governed connections.** Gatekeepers broker every call to GitHub, Google, Slack, or the client's internal systems behind a Cloudflare MCP server portal. Each grant is scoped to the one resource it names, every action is logged, and every write waits for human approval.
+* **Their environment, their data.** Everything runs on Workers and Durable Objects in the client's account. Models go through their own AI Gateway.
+
+**Deploying a demo or client instance:** see [docs/deploy.md](docs/deploy.md) (`pnpm deploy:instance`) to deploy into a Cloudflare account, or [docs/container.md](docs/container.md) (`docker compose up --build`) to run everything in one local container.
+
+The rest of this README is the upstream Cloudflare OS documentation.
+
+---
+
 # Cloudflare OS: An AI productivity environment
 
 Cloudflare OS is an "operating system" for AI productivity originally developed for use inside Cloudflare. A large portion of Cloudflare's workforce -- from engineering to sales and everything in between -- uses Cloudflare OS every day to help them do their jobs.

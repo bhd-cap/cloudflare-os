@@ -280,7 +280,7 @@ export class GatekeeperVendor extends WorkerEntrypoint<Env> implements Gatekeepe
       color: "#f2f2f2",
       tagline: "Read, post, and engage on X (formerly Twitter)",
       description:
-        "Connect your X account so Cloudflare OS can read your timeline, mentions, bookmarks, and " +
+        "Connect your X account so BlackHawk OS can read your timeline, mentions, bookmarks, and " +
         "search, and draft posts, threads, replies, likes, and follows that you approve before " +
         "they go out.",
     };

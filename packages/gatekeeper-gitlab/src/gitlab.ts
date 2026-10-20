@@ -199,7 +199,7 @@ export default {
         // The refusal ends the attempt: its nonce is consumed so a replayed callback cannot resume it.
         if (!await stub.consumeOAuthNonce(oauthNonce)) return htmlResponse(INVALID_LINK_HTML);
         return htmlResponse(errorPageHtml(
-          "GitLab authorization failed", "Please restart the connection flow from Cloudflare OS."), 400);
+          "GitLab authorization failed", "Please restart the connection flow from BlackHawk OS."), 400);
       }
       const code = url.searchParams.get("code");
       if (!code) return new Response("Error: no 'code' provided", { status: 400 });
@@ -226,7 +226,7 @@ export class GatekeeperVendor extends WorkerEntrypoint<Env> implements Gatekeepe
       color: "#fff0e8",
       tagline: "Triage issues, review merge requests, and push to projects",
       description:
-          "Connect your GitLab account so Cloudflare OS can read and update issues, merge requests, " +
+          "Connect your GitLab account so BlackHawk OS can read and update issues, merge requests, " +
           "and reviews, and pull from and push to the projects you choose.",
       providesAuth: true,
     };
