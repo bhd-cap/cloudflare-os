@@ -9,6 +9,8 @@
 //   --port PORT                 Listen on PORT instead of 8787. Overrides VITE_BACKEND_HOST.
 //   --ip ADDRESS                Listen on ADDRESS instead of localhost, e.g. 0.0.0.0 inside a
 //                               container so a published port can reach the server.
+//   --no-watch                  Skip the gatekeeper UI watchers, for a server nobody edits (the
+//                               container and LXC installs). They hold several GB of memory.
 //
 // Env:
 //   VITE_BACKEND_HOST=localhost:9000  Also pass --port 9000 to wrangler dev.
@@ -71,6 +73,9 @@ const useWorkersAi = process.argv.includes("--use-workers-ai-binding");
 // Vite dev server). In normal dev mode we leave assets unconfigured so the frontend is served by
 // Vite on :3000 and no `vite build` is required to start the dev server.
 const serveFrontendAssets = process.argv.includes("--serve-frontend-assets");
+
+// The pre-flight builds still run, so every generated UI exists; only rebuild-on-edit is skipped.
+const watchSources = !process.argv.includes("--no-watch");
 
 let backendHost: string;
 let wranglerPort: string | null;
@@ -368,7 +373,7 @@ try {
 
 // Watchers start only after those builds finish. Both watch modes run a full build before they
 // begin watching, so starting one earlier would put two processes on the same src/generated files.
-for (const gk of gatekeepers) {
+for (const gk of watchSources ? gatekeepers : []) {
   // Configurator UI (compiled by build-gatekeeper-configurator.ts). The pre-flight already ran this
   // same build, so each watcher's own initial build is a no-op write -- and it is what keeps the
   // watcher self-contained: it reads the sources itself, immediately before it starts watching them,

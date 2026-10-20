@@ -33,6 +33,6 @@ VOLUME /app/.wrangler/state
 EXPOSE 8787
 
 # run-local's server step, without its `pnpm install` and builds (done above), so a start needs no
-# registry access. --ip 0.0.0.0: wrangler dev listens on localhost by default, which a published
-# port cannot reach.
-CMD ["node", "scripts/run-dev-server.ts", "--serve-frontend-assets", "--ip", "0.0.0.0"]
+# registry access. --no-watch: nobody edits the sources here, and the UI watchers hold several GB.
+# --ip 0.0.0.0: wrangler dev listens on localhost by default, which a published port cannot reach.
+CMD ["node", "scripts/run-dev-server.ts", "--serve-frontend-assets", "--no-watch", "--ip", "0.0.0.0"]
