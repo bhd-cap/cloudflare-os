@@ -10,6 +10,7 @@
     "test": "node scripts/vp/run.ts --filter=!cloudflare-os --cache test",
     "evals": "pnpm --filter @gadgets/workshop-evals evals",
     "evals:ui": "pnpm --filter @gadgets/workshop-evals evals:ui",
+    "deploy:instance": "node scripts/deploy/deploy.ts",
     "preview:config": "node scripts/preview/preview.ts config",
     "preview:deploy": "node scripts/preview/preview.ts deploy",
     "preview:delete": "node scripts/preview/preview.ts delete",

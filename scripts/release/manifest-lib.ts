@@ -266,9 +266,11 @@ const HANDLED_CONFIG_KEYS = new Set([
 
 const ARTIFACTS_CUT_ALLOWED = new Set(["gatekeeper-context"]);
 
-// Installable gatekeepers that do NOT take third-party OAuth app credentials; everyone else
-// defaults to CLIENT_ID/CLIENT_SECRET secret inputs (overridable via deploy-inputs.json).
-const NO_DEFAULT_CRED_INPUTS = new Set([
+/**
+ * Installable gatekeepers that do NOT take third-party OAuth app credentials; everyone else
+ * defaults to CLIENT_ID/CLIENT_SECRET secret inputs (overridable via deploy-inputs.json).
+ */
+export const NO_DEFAULT_CRED_INPUTS = new Set([
   "gatekeeper-context",       // no third-party service; uses its own storage
   "gatekeeper-homeassistant", // users connect their own Home Assistant URL + token in-app
   "gatekeeper-scheduler",     // auto-provisioned; no third-party OAuth app
@@ -281,10 +283,12 @@ const NO_DEFAULT_CRED_INPUTS = new Set([
 // instances don't have. The bundle still ships in the release so the entry stays auditable.
 const NOT_INSTALLABLE = new Set(["gatekeeper-email"]);
 
-// Ambient gatekeepers the deploy service installs on every fresh core deploy, server-side with
-// no user interaction. Members must take no inputs of any kind (enforced below): a preinstall
-// has nobody to ask.
-const PREINSTALL = new Set(["gatekeeper-context", "gatekeeper-scheduler", "gatekeeper-websearch"]);
+/**
+ * Ambient gatekeepers the deploy service installs on every fresh core deploy, server-side with
+ * no user interaction. Members must take no inputs of any kind (enforced below): a preinstall
+ * has nobody to ask.
+ */
+export const PREINSTALL = new Set(["gatekeeper-context", "gatekeeper-scheduler", "gatekeeper-websearch"]);
 
 // Gatekeepers that may be installed at most once per instance; the deploy service enforces this
 // at install time. Two independent reasons to be here:
